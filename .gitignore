@@ -1,0 +1,26 @@
+# Python
+.venv/
+venv/
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.pytest_cache/
+
+# Environment Variables
+.env
+
+# Vector DB storage
+data/chroma/
+
+# Node / Frontend
+node_modules/
+dist/
+.vite/
+
+# IDE & OS
+.vscode/
+.idea/
+pyrefly.toml
+.DS_Store
+Thumbs.db
