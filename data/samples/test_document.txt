@@ -1,0 +1,17 @@
+AI-Powered Document Question-Answering RAG System Overview
+
+1. Executive Summary
+In Q3 2026, NovaTech Solutions reported total revenue of $42.5 million, representing a 15% increase year-over-year. The strong financial performance was driven by accelerated enterprise adoption of the NovaAI Cloud Platform and strategic expansion into EMEA markets. Gross profit margin expanded to 74.2%, up from 70.8% in Q2 2026, primarily due to cloud infrastructure optimizations and enhanced automated data ingestion workflows.
+
+2. System Architecture & RAG Pipeline
+The NovaAI Document QA architecture uses Retrieval-Augmented Generation (RAG) to eliminate Large Language Model hallucinations. The RAG pipeline processes private enterprise files using four core components:
+- Document Ingestion Service: Parses .txt, .md, and .pdf documents, validating UTF-8 encodings and PDF structure.
+- Fixed-Size Overlapping Chunker: Divides parsed document text into chunks of 1000 characters with a 200-character overlap between consecutive segments to maintain contextual continuity across split boundaries.
+- Local Vector Embedding Engine: Utilizes the all-MiniLM-L6-v2 sentence-transformer model to compute 384-dimensional dense semantic vectors for each chunk.
+- Persistent Vector Database (ChromaDB): Stores chunk text alongside embedding vectors and document metadata, enabling cosine similarity searches for top-k=3 context retrieval.
+
+3. Key Q3 Financial Highlights & Operational Challenges
+Despite revenue growth, Q3 operational expenses rose by 8% due to increased R&D investment in fine-tuning domain-specific LLM models. Supply chain disruptions in specialized GPU hardware slightly delayed the deployment of NovaTech's secondary data center in Frankfurt, moving its operational readiness date from Q3 to Q4 2026. However, customer retention rates remained high at 96.4%, and net dollar expansion reached 122%.
+
+4. Security & Compliance Requirements
+All document ingestion pipelines enforce strict data privacy protocols. Uploaded enterprise files undergo automated extension checks rejecting non-text formats such as PNG images or CSV spreadsheets. Vector stores maintain strict isolation across tenant partitions, and all network calls to external LLM providers pass through encrypted TLS endpoints with sanitized context prompts.
